@@ -1,0 +1,27 @@
+﻿@using Candidate.Web.Models
+@using Candidate.Data
+@model CandidateViewModel
+
+<div class="row" data-id="@Model.Candidate.Id">
+    <div class="col-md-4 col-md-offset-4">
+        <div class="well">
+            <h5 style="text-align: center">@Model.Candidate.Name</h5>
+            <br />
+            <h5 style="text-align: center">@Model.Candidate.Number</h5>
+            <br />
+            <h5 style="text-align: center">@Model.Candidate.Notes</h5>
+            <br />
+            <button style="padding: 20px" class="btn btn-primary" id="confirm">Confirm</button>
+            <button style="padding: 20px" class="btn btn-danger" id="decline">Decline</button>
+            <br />
+        </div>
+    </div>
+</div>
+
+<hr />
+
+@section scripts {
+
+    <script src="~/js/JavaScript.js"></script>
+
+}

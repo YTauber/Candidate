@@ -1,0 +1,43 @@
+﻿@using Candidate.Web.Models
+@using Candidate.Data
+@model CandidatesViewModel
+
+<button id="toggle" class="btn btn-info">Toggle Notes</button>
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+        <div class="well">
+            <h3 style="margin: 20px; text-align: center">@Model.Message</h3>
+            <table class="table table-bordered table-striped table-hover">
+                <tr>
+                    @if (Model.Pending)
+                    {
+                        <th>Details</th>
+                    }
+                    <th>Name</th>
+                    <th>Number</th>
+                    <th class="notes">Notes</th>
+                </tr>
+                @foreach (Candidates c in Model.Candidates)
+                {
+                <tr>
+                    @if (Model.Pending)
+                    {
+                        <td><a href="/home/viewcandidate?candidateid=@c.Id">Details</a></td>
+                    }
+                    <td>@c.Name</td>
+                    <td>@c.Number</td>
+                    <td class="notes">@c.Notes</td>
+                </tr>
+                }
+            </table>
+        </div>
+    </div>
+</div>
+
+@section scripts {
+
+    <script src="~/js/JavaScript.js"></script>
+
+}
+
+
